@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,36 +50,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="View\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="View\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormOut.cs">
+    <Compile Include="View\FormIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormOut.Designer.cs">
+    <Compile Include="View\FormIn.Designer.cs">
+      <DependentUpon>FormIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormOut.Designer.cs">
       <DependentUpon>FormOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormOutConfirm.cs">
+    <Compile Include="View\FormOutConfirm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormOutConfirm.Designer.cs">
+    <Compile Include="View\FormOutConfirm.Designer.cs">
       <DependentUpon>FormOutConfirm.cs</DependentUpon>
     </Compile>
-    <Compile Include="item.cs" />
-    <Compile Include="ItemCollection.cs" />
+    <Compile Include="Model\item.cs" />
+    <Compile Include="Model\ItemCollection.cs" />
+    <Compile Include="View\OutInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OutInvoice.Designer.cs">
+      <DependentUpon>OutInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormOut.resx">
+    <EmbeddedResource Include="View\FormIn.resx">
+      <DependentUpon>FormIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormOut.resx">
       <DependentUpon>FormOut.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormOutConfirm.resx">
+    <EmbeddedResource Include="View\FormOutConfirm.resx">
       <DependentUpon>FormOutConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OutInvoice.resx">
+      <DependentUpon>OutInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -86,6 +108,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -98,6 +121,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Control\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

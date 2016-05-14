@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Курсач
+namespace Курсач.Control
 {
-    class ItemCollection
+    class IO
     {
-        Item[] m;
-
     }
 }

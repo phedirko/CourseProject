@@ -32,7 +32,8 @@ namespace Курсач
 
         private void OkItem_Click(object sender, EventArgs e)
         {
-
+            OutInvoice newInvoice = new OutInvoice();
+            newInvoice.Show();
         }
     }
 }
