@@ -65,7 +65,9 @@ namespace Курсач
             this.items.AddRange(items);
         }
 
-
-       
+        public static implicit operator List<object>(ItemCollection v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -26,8 +26,6 @@ namespace Курсач
 
 
 
-        
-
 
         public void RefreshDataView(object sender, EventArgs e)
         {
@@ -57,7 +55,7 @@ namespace Курсач
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormOut newForm = new FormOut();
+            FormOut newForm = new FormOut(itc);
             newForm.ShowDialog();
         }
 
@@ -69,7 +67,7 @@ namespace Курсач
         private void button1_Click_1(object sender, EventArgs e)
         {
             FormIn NewForm = new FormIn(itc);
-            NewForm.Show();
+            NewForm.ShowDialog();
 
             NewForm.FormClosed += RefreshDataView;
         }

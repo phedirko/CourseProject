@@ -14,8 +14,21 @@ namespace Курсач
     {
         public FormOutConfirm()
         {
+            Item itd = new Item()
+            {
+                Name = "ff",
+                Price = 3,
+                Count = 10,
+                Measure = "fr",
+                dateOfLast = DateTime.Now
+            };
             InitializeComponent();
+            textBoxOutConf.Text = itd.ToString();
+            
         }
+
+
+       
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -23,6 +36,11 @@ namespace Курсач
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormOutConfirm_Load(object sender, EventArgs e)
         {
 
         }

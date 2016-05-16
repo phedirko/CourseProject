@@ -55,6 +55,7 @@ namespace Курсач.View
                     dat.ToString()
 
                 });
+
            
         }
 
