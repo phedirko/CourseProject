@@ -26,23 +26,34 @@ namespace Курсач.View
         private void AddNewButton_Click(object sender, EventArgs e)
         {
             string name = NameTextbox.Text;
+            double price = (double)UpDownInPrice.Value;
             double count = (double)CountInputBox.Value;
+            string measure;
+            DateTime dat = DateTime.Now;
 
-            Item newItem = new Item() {
-                Name = name,
-                Count = count,
-                dateOfLast = DateTime.Now,
-                Measure = "kgs",
-                Price = 100500
-                
+            if (RBInKgs.Checked) measure = "Кг.";
+            else measure = "Шт.";
 
-            };
+
+                Item newItem = new Item() {
+                    Name = name,
+                    Count = count,
+                    dateOfLast = dat,
+                    Measure = measure,
+                    Price = price
+
+
+                };
             items.Add(newItem);
 
             ItemsGridView.Rows.Add(
                 new string[] {
                     name,
-                    count.ToString()
+                    count.ToString(),
+                    measure,
+                    price.ToString(),
+                    dat.ToString()
+
                 });
            
         }
