@@ -21,8 +21,45 @@ namespace Курсач.View
         {
             GlobalItems = globalItems;
             InitializeComponent();
+            RefreshDataView(null,null);
         }
 
+
+        public void RefreshDataView(object sender, EventArgs e)
+        {
+            dataGridViewAll.Rows.Clear();
+            foreach (Item i in GlobalItems.items)
+            {
+                string[] row = new string[]
+                {
+                    i.Name.ToString(),
+                    i.Count.ToString(),
+                    i.Measure.ToString(),
+                    i.Price.ToString(),
+                    i.dateOfLast.ToString(),
+
+                };
+
+                dataGridViewAll.Rows.Add(row);
+            }
+        }
+
+
+
+        public void AvPlus(string name, double number)
+        {
+            foreach(Item i in GlobalItems.items)
+            {
+                if (i.Name == name)
+                {
+                    i.Count += number;
+                    i.dateOfLast = DateTime.Now;
+                }
+            }
+        }
+
+
+        //Добавление нового
         private void AddNewButton_Click(object sender, EventArgs e)
         {
             string name = NameTextbox.Text;
@@ -59,10 +96,7 @@ namespace Курсач.View
            
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
@@ -70,6 +104,31 @@ namespace Курсач.View
             this.Close();
         }
 
-        
+        private void selectOfAv_Click(object sender, EventArgs e)
+        {
+            var sIt = dataGridViewAll.SelectedRows;
+            var nameOfSel = sIt[0].Cells[0].Value.ToString();
+            labelOfAvIt.Text = nameOfSel;
+                        
+        }
+
+
+        private void AddToExst_Click(object sender, EventArgs e)
+        {
+            var sIt = dataGridViewAll.SelectedRows;
+            var numb = (double)NumericAvPlus.Value;
+            var nameOfSel = sIt[0].Cells[0].Value.ToString();
+            AvPlus(nameOfSel, numb);
+
+            ItemsGridView.Rows.Add(
+               new string[] 
+                {
+                    sIt[0].Cells[0].Value.ToString(),
+                    numb.ToString(),
+                    sIt[0].Cells[2].Value.ToString(),
+                    sIt[0].Cells[3].Value.ToString(),
+                    DateTime.Now.ToString()
+                });
+        }
     }
 }

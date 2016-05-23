@@ -14,6 +14,12 @@ namespace Курсач
         public double Count { get; set; }
         public string Measure { get; set; }
         public double Price { get; set; }
-        public DateTime dateOfLast { get; set; }        
+        public DateTime dateOfLast { get; set; }
+        
+        public double TotalPrice()
+        {
+            
+            return this.Count * this.Price;
+        }        
     }
 }

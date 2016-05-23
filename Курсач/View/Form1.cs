@@ -67,7 +67,7 @@ namespace Курсач
         private void button1_Click_1(object sender, EventArgs e)
         {
             FormIn NewForm = new FormIn(itc);
-            NewForm.ShowDialog();
+            NewForm.Show();
 
             NewForm.FormClosed += RefreshDataView;
         }
@@ -81,5 +81,7 @@ namespace Курсач
         {
             itc.Load();
         }
+
+      
     }
 }

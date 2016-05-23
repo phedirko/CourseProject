@@ -68,12 +68,6 @@
     <Compile Include="View\FormOut.Designer.cs">
       <DependentUpon>FormOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormOutConfirm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormOutConfirm.Designer.cs">
-      <DependentUpon>FormOutConfirm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\item.cs" />
     <Compile Include="Model\ItemCollection.cs" />
     <Compile Include="View\OutInvoice.cs">
@@ -92,9 +86,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormOut.resx">
       <DependentUpon>FormOut.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormOutConfirm.resx">
-      <DependentUpon>FormOutConfirm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\OutInvoice.resx">
       <DependentUpon>OutInvoice.cs</DependentUpon>
