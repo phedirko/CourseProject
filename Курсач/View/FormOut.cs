@@ -91,13 +91,14 @@ namespace Курсач
                 };
 
                 dataGridView1.Rows.Add(row);
-            }
 
 
-            foreach(Item i in GlobalItemsOut.items)
-            {
-                if(i.Name == name1)i.Count -= count1;
+                foreach (Item i in GlobalItemsOut.items)
+                {
+                    if (i.Name == name1) i.Count -= count1;
+                }
             }
+
         }
         
 

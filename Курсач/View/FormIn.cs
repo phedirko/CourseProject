@@ -130,5 +130,15 @@ namespace Курсач.View
                     DateTime.Now.ToString()
                 });
         }
+
+        private void FormIn_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ItemsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

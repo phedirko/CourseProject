@@ -38,23 +38,25 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateOfLast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDownToOut = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.NameToOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountToOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MeasureToOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PriceToOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AvPr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDownToOut = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownToOut)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddToOutBtn
             // 
-            this.AddToOutBtn.Location = new System.Drawing.Point(289, 236);
+            this.AddToOutBtn.Location = new System.Drawing.Point(184, 71);
             this.AddToOutBtn.Name = "AddToOutBtn";
             this.AddToOutBtn.Size = new System.Drawing.Size(75, 23);
             this.AddToOutBtn.TabIndex = 7;
@@ -64,7 +66,7 @@
             // 
             // SelectItemBtn
             // 
-            this.SelectItemBtn.Location = new System.Drawing.Point(289, 160);
+            this.SelectItemBtn.Location = new System.Drawing.Point(184, 21);
             this.SelectItemBtn.Name = "SelectItemBtn";
             this.SelectItemBtn.Size = new System.Drawing.Size(75, 23);
             this.SelectItemBtn.TabIndex = 8;
@@ -101,7 +103,6 @@
             this.dataGridViewAv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAv.Size = new System.Drawing.Size(519, 141);
             this.dataGridViewAv.TabIndex = 10;
-           
             // 
             // NameOfItem
             // 
@@ -149,50 +150,18 @@
             this.MeasureToOut,
             this.PriceToOut,
             this.AvPr});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 291);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 310);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(519, 150);
             this.dataGridView1.TabIndex = 11;
-            
-            // 
-            // NameToOut
-            // 
-            this.NameToOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NameToOut.HeaderText = "Name";
-            this.NameToOut.Name = "NameToOut";
-            this.NameToOut.ReadOnly = true;
-            // 
-            // CountToOut
-            // 
-            this.CountToOut.HeaderText = "Count";
-            this.CountToOut.Name = "CountToOut";
-            this.CountToOut.ReadOnly = true;
-            // 
-            // MeasureToOut
-            // 
-            this.MeasureToOut.HeaderText = "Measure";
-            this.MeasureToOut.Name = "MeasureToOut";
-            this.MeasureToOut.ReadOnly = true;
-            // 
-            // PriceToOut
-            // 
-            this.PriceToOut.HeaderText = "Price";
-            this.PriceToOut.Name = "PriceToOut";
-            this.PriceToOut.ReadOnly = true;
-            // 
-            // AvPr
-            // 
-            this.AvPr.HeaderText = "AverPrice";
-            this.AvPr.Name = "AvPr";
-            this.AvPr.ReadOnly = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(13, 160);
+            this.label1.Location = new System.Drawing.Point(6, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 12;
@@ -202,16 +171,17 @@
             // 
             this.labelName.AutoSize = true;
             this.labelName.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.labelName.Location = new System.Drawing.Point(13, 190);
+            this.labelName.Location = new System.Drawing.Point(6, 51);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(0, 13);
+            this.labelName.Size = new System.Drawing.Size(41, 13);
             this.labelName.TabIndex = 13;
+            this.labelName.Text = "(пусто)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(183, 160);
+            this.label2.Location = new System.Drawing.Point(95, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 14;
@@ -219,33 +189,75 @@
             // 
             // numericUpDownToOut
             // 
-            this.numericUpDownToOut.Location = new System.Drawing.Point(186, 183);
+            this.numericUpDownToOut.Location = new System.Drawing.Point(98, 44);
             this.numericUpDownToOut.Name = "numericUpDownToOut";
             this.numericUpDownToOut.Size = new System.Drawing.Size(63, 20);
             this.numericUpDownToOut.TabIndex = 15;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.labelName);
+            this.groupBox1.Controls.Add(this.numericUpDownToOut);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.AddToOutBtn);
+            this.groupBox1.Controls.Add(this.SelectItemBtn);
+            this.groupBox1.Location = new System.Drawing.Point(13, 176);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(268, 100);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Выбор товара";
+            // 
+            // NameToOut
+            // 
+            this.NameToOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NameToOut.HeaderText = "Имя";
+            this.NameToOut.Name = "NameToOut";
+            this.NameToOut.ReadOnly = true;
+            // 
+            // CountToOut
+            // 
+            this.CountToOut.HeaderText = "Количество";
+            this.CountToOut.Name = "CountToOut";
+            this.CountToOut.ReadOnly = true;
+            // 
+            // MeasureToOut
+            // 
+            this.MeasureToOut.HeaderText = "Ед. Изм.";
+            this.MeasureToOut.Name = "MeasureToOut";
+            this.MeasureToOut.ReadOnly = true;
+            // 
+            // PriceToOut
+            // 
+            this.PriceToOut.HeaderText = "Цена";
+            this.PriceToOut.Name = "PriceToOut";
+            this.PriceToOut.ReadOnly = true;
+            // 
+            // AvPr
+            // 
+            this.AvPr.HeaderText = "Итого";
+            this.AvPr.Name = "AvPr";
+            this.AvPr.ReadOnly = true;
             // 
             // FormOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 501);
-            this.Controls.Add(this.numericUpDownToOut);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.labelName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dataGridViewAv);
             this.Controls.Add(this.OkItem);
-            this.Controls.Add(this.SelectItemBtn);
-            this.Controls.Add(this.AddToOutBtn);
             this.Name = "FormOut";
             this.Text = "FormOut";
             this.Load += new System.EventHandler(this.FormOut_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownToOut)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -260,14 +272,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateOfLast;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numericUpDownToOut;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameToOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn CountToOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn MeasureToOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceToOut;
         private System.Windows.Forms.DataGridViewTextBoxColumn AvPr;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDownToOut;
     }
 }

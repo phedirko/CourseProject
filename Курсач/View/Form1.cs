@@ -56,7 +56,8 @@ namespace Курсач
         private void button2_Click(object sender, EventArgs e)
         {
             FormOut newForm = new FormOut(itc);
-            newForm.ShowDialog();
+            newForm.Show();
+            newForm.FormClosed += RefreshDataView;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
