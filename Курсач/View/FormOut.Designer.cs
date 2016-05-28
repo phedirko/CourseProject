@@ -38,16 +38,16 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateOfLast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDownToOut = new System.Windows.Forms.NumericUpDown();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.NameToOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountToOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MeasureToOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PriceToOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AvPr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDownToOut = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownToOut)).BeginInit();
@@ -157,6 +157,37 @@
             this.dataGridView1.Size = new System.Drawing.Size(519, 150);
             this.dataGridView1.TabIndex = 11;
             // 
+            // NameToOut
+            // 
+            this.NameToOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NameToOut.HeaderText = "Имя";
+            this.NameToOut.Name = "NameToOut";
+            this.NameToOut.ReadOnly = true;
+            // 
+            // CountToOut
+            // 
+            this.CountToOut.HeaderText = "Количество";
+            this.CountToOut.Name = "CountToOut";
+            this.CountToOut.ReadOnly = true;
+            // 
+            // MeasureToOut
+            // 
+            this.MeasureToOut.HeaderText = "Ед. Изм.";
+            this.MeasureToOut.Name = "MeasureToOut";
+            this.MeasureToOut.ReadOnly = true;
+            // 
+            // PriceToOut
+            // 
+            this.PriceToOut.HeaderText = "Цена";
+            this.PriceToOut.Name = "PriceToOut";
+            this.PriceToOut.ReadOnly = true;
+            // 
+            // AvPr
+            // 
+            this.AvPr.HeaderText = "Итого";
+            this.AvPr.Name = "AvPr";
+            this.AvPr.ReadOnly = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -190,6 +221,11 @@
             // numericUpDownToOut
             // 
             this.numericUpDownToOut.Location = new System.Drawing.Point(98, 44);
+            this.numericUpDownToOut.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.numericUpDownToOut.Name = "numericUpDownToOut";
             this.numericUpDownToOut.Size = new System.Drawing.Size(63, 20);
             this.numericUpDownToOut.TabIndex = 15;
@@ -209,37 +245,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Выбор товара";
             // 
-            // NameToOut
-            // 
-            this.NameToOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NameToOut.HeaderText = "Имя";
-            this.NameToOut.Name = "NameToOut";
-            this.NameToOut.ReadOnly = true;
-            // 
-            // CountToOut
-            // 
-            this.CountToOut.HeaderText = "Количество";
-            this.CountToOut.Name = "CountToOut";
-            this.CountToOut.ReadOnly = true;
-            // 
-            // MeasureToOut
-            // 
-            this.MeasureToOut.HeaderText = "Ед. Изм.";
-            this.MeasureToOut.Name = "MeasureToOut";
-            this.MeasureToOut.ReadOnly = true;
-            // 
-            // PriceToOut
-            // 
-            this.PriceToOut.HeaderText = "Цена";
-            this.PriceToOut.Name = "PriceToOut";
-            this.PriceToOut.ReadOnly = true;
-            // 
-            // AvPr
-            // 
-            this.AvPr.HeaderText = "Итого";
-            this.AvPr.Name = "AvPr";
-            this.AvPr.ReadOnly = true;
-            // 
             // FormOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,7 +256,6 @@
             this.Controls.Add(this.OkItem);
             this.Name = "FormOut";
             this.Text = "FormOut";
-            this.Load += new System.EventHandler(this.FormOut_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownToOut)).EndInit();

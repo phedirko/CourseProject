@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Курсач
 {
@@ -45,8 +46,38 @@ namespace Курсач
         }
 
 
+        public void ExportToTXT()
+        {
+
+            string filename = String.Format("Отгрузка {0:yyyy-MM-dd-HH-mm}{1}", DateTime.Now, ".txt");
+            TextWriter sw = new StreamWriter(@filename);
+            int rowcount = dataGridView1.Rows.Count;
+
+            double avpr = 0;
+            sw.WriteLine("Наим\tКол-во\tЦена\tСумма");
+            for (int i = 0; i < rowcount; i++)
+            {
+                var itogo = double.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) *
+                    double.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString());
+                avpr += itogo;
+                sw.WriteLine(
+                    dataGridView1.Rows[i].Cells[0].Value.ToString() + "\t"
+                    + dataGridView1.Rows[i].Cells[1].Value.ToString() + " "
+                    + dataGridView1.Rows[i].Cells[2].Value.ToString() + "\t"
+                    + dataGridView1.Rows[i].Cells[3].Value.ToString() + "\t"
+                    + itogo
+
+                    );
+            }
+
+            sw.WriteLine("\nИтого:" + avpr);
+            sw.Close();
+        }
 
 
+
+
+        //Добавление в таблицу на отгрузку
         public void ThrowItemToOut(DataGridView dataGridViewAv)
         {
             var c = dataGridViewAv.SelectedRows;
@@ -118,18 +149,12 @@ namespace Курсач
         private void OkItem_Click(object sender, EventArgs e)
         {
             GlobalItemsOut.Add(items);
+            ExportToTXT();
             this.Close();
         }
 
-        private void FormOut_Load(object sender, EventArgs e)
-        {
-            
-        }
+        
 
-        private void dataGridViewToOut_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
 
         

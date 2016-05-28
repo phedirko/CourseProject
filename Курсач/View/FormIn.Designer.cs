@@ -91,32 +91,36 @@
             this.ItemsGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ItemsGridView.Size = new System.Drawing.Size(547, 102);
             this.ItemsGridView.TabIndex = 0;
-            this.ItemsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemsGridView_CellContentClick);
             // 
             // NameIn
             // 
             this.NameIn.HeaderText = "Наименование";
             this.NameIn.Name = "NameIn";
+            this.NameIn.ReadOnly = true;
             // 
             // Count
             // 
             this.Count.HeaderText = "Количество";
             this.Count.Name = "Count";
+            this.Count.ReadOnly = true;
             // 
             // MeasureType
             // 
             this.MeasureType.HeaderText = "Ед Изм.";
             this.MeasureType.Name = "MeasureType";
+            this.MeasureType.ReadOnly = true;
             // 
             // Price
             // 
             this.Price.HeaderText = "Цена";
             this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             // 
             // DateIn
             // 
             this.DateIn.HeaderText = "Дата";
             this.DateIn.Name = "DateIn";
+            this.DateIn.ReadOnly = true;
             // 
             // NameTextbox
             // 
@@ -138,6 +142,11 @@
             // CountInputBox
             // 
             this.CountInputBox.Location = new System.Drawing.Point(3, 77);
+            this.CountInputBox.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.CountInputBox.Name = "CountInputBox";
             this.CountInputBox.Size = new System.Drawing.Size(70, 20);
             this.CountInputBox.TabIndex = 4;
@@ -242,26 +251,31 @@
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Наименование";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "Количество";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Ед Изм.";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "Цена";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "Дата";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // selectOfAv
             // 
@@ -303,6 +317,11 @@
             // NumericAvPlus
             // 
             this.NumericAvPlus.Location = new System.Drawing.Point(9, 73);
+            this.NumericAvPlus.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.NumericAvPlus.Name = "NumericAvPlus";
             this.NumericAvPlus.Size = new System.Drawing.Size(63, 20);
             this.NumericAvPlus.TabIndex = 16;
@@ -380,7 +399,6 @@
             this.Controls.Add(this.ConfirmButton);
             this.Name = "FormIn";
             this.Text = "FormIn";
-            this.Load += new System.EventHandler(this.FormIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ItemsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountInputBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownInPrice)).EndInit();
@@ -403,7 +421,6 @@
         private System.Windows.Forms.DataGridView ItemsGridView;
         private System.Windows.Forms.TextBox NameTextbox;
         private System.Windows.Forms.Button AddNewButton;
-        private System.Windows.Forms.NumericUpDown CountInputBox;
         private System.Windows.Forms.Button ConfirmButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -433,5 +450,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
+        public System.Windows.Forms.NumericUpDown CountInputBox;
     }
 }

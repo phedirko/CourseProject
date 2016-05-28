@@ -25,8 +25,7 @@ namespace Курсач
         }
 
 
-
-
+        //Обвноление таблицы товаров главной формы
         public void RefreshDataView(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
@@ -46,13 +45,8 @@ namespace Курсач
             }
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //Item<int> item1 = new Item<int>();
-            //item1.Set(dataGridView1);
-        }
-
+       
+        //Открытие формы отгрузки 
         private void button2_Click(object sender, EventArgs e)
         {
             FormOut newForm = new FormOut(itc);
@@ -60,29 +54,37 @@ namespace Курсач
             newForm.FormClosed += RefreshDataView;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        //Открытие формы поступления
         private void button1_Click_1(object sender, EventArgs e)
         {
             FormIn NewForm = new FormIn(itc);
             NewForm.Show();
-
             NewForm.FormClosed += RefreshDataView;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+
+        //Удаление товара из базы
+        private void button3_Click_1(object sender, EventArgs e)
         {
-            itc.Save();
+
+            var confirmResult = MessageBox.Show("Вы действительно хотите удалить этот товар из базы?",
+                                     "Подтверждение удаления",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                string toDel = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                foreach (Item i in itc.items)
+                {
+                    if (i.Name == toDel)
+                    {
+                        itc.items.Remove(i);
+                        break;
+                    }
+
+                }
+                RefreshDataView(null, null);
+            }
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            itc.Load();
-        }
-
-      
     }
 }

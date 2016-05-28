@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Курсач.View
 {
     public partial class FormIn : Form
     {
         public List<Item> items = new List<Item>();
-
         public ItemCollection GlobalItems;
 
+        
 
         public FormIn(ItemCollection globalItems)
         {
@@ -24,7 +25,7 @@ namespace Курсач.View
             RefreshDataView(null,null);
         }
 
-
+        // Обновление таблицы товаров в наличии на форме отгрузки
         public void RefreshDataView(object sender, EventArgs e)
         {
             dataGridViewAll.Rows.Clear();
@@ -44,8 +45,8 @@ namespace Курсач.View
             }
         }
 
-
-
+        // Метод, который увеличивает значение "количество"
+        // у выбранного товара, который есть в базе
         public void AvPlus(string name, double number)
         {
             foreach(Item i in GlobalItems.items)
@@ -57,9 +58,9 @@ namespace Курсач.View
                 }
             }
         }
+        
 
-
-        //Добавление нового
+        //Добавление нового товара
         private void AddNewButton_Click(object sender, EventArgs e)
         {
             string name = NameTextbox.Text;
@@ -78,8 +79,6 @@ namespace Курсач.View
                     dateOfLast = dat,
                     Measure = measure,
                     Price = price
-
-
                 };
             items.Add(newItem);
 
@@ -96,23 +95,54 @@ namespace Курсач.View
            
         }
 
-       
+        // Метод экспорта в тхт
+        public void ExportToTXT()
+        {
+                     
+            string filename = String.Format("Поступление{0:yyyy-MM-dd-HH-mm}{1}", DateTime.Now, ".txt");
+            TextWriter sw = new StreamWriter(@filename);
+            int rowcount = ItemsGridView.Rows.Count;
 
+            double avpr=0;
+            sw.WriteLine("Наим\tКол-во\tЦена\tСумма");
+            for (int i = 0; i < rowcount; i++)
+            {
+                var itogo = double.Parse(ItemsGridView.Rows[i].Cells[1].Value.ToString()) * 
+                    double.Parse(ItemsGridView.Rows[i].Cells[3].Value.ToString());
+                avpr += itogo;
+                sw.WriteLine(
+                    ItemsGridView.Rows[i].Cells[0].Value.ToString() + "\t"
+                    + ItemsGridView.Rows[i].Cells[1].Value.ToString() + " "
+                    + ItemsGridView.Rows[i].Cells[2].Value.ToString() + "\t"
+                    + ItemsGridView.Rows[i].Cells[3].Value.ToString() + "\t"
+                    + itogo
+
+                    );
+            }
+
+            sw.WriteLine("\nИтого:" + avpr);
+            sw.Close();
+        }
+        
+
+
+        // Добавление новых товаров в коллекцию по нажатию кнопки ОК
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
             GlobalItems.Add(items);
+            ExportToTXT();          
             this.Close();
         }
 
+        // Метод, который выводит имя выбранного товара
         private void selectOfAv_Click(object sender, EventArgs e)
         {
             var sIt = dataGridViewAll.SelectedRows;
             var nameOfSel = sIt[0].Cells[0].Value.ToString();
-            labelOfAvIt.Text = nameOfSel;
-                        
+            labelOfAvIt.Text = nameOfSel;                        
         }
 
-
+        // Добавляет товар в таблицу поступления
         private void AddToExst_Click(object sender, EventArgs e)
         {
             var sIt = dataGridViewAll.SelectedRows;
@@ -131,14 +161,5 @@ namespace Курсач.View
                 });
         }
 
-        private void FormIn_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ItemsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
