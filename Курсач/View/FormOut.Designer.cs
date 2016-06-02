@@ -255,7 +255,7 @@
             this.Controls.Add(this.dataGridViewAv);
             this.Controls.Add(this.OkItem);
             this.Name = "FormOut";
-            this.Text = "FormOut";
+            this.Text = "Отгрузка";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownToOut)).EndInit();

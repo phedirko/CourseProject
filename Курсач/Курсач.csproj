@@ -70,12 +70,6 @@
     </Compile>
     <Compile Include="Model\item.cs" />
     <Compile Include="Model\ItemCollection.cs" />
-    <Compile Include="View\OutInvoice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\OutInvoice.Designer.cs">
-      <DependentUpon>OutInvoice.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="View\Form1.resx">
@@ -87,9 +81,6 @@
     <EmbeddedResource Include="View\FormOut.resx">
       <DependentUpon>FormOut.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\OutInvoice.resx">
-      <DependentUpon>OutInvoice.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -99,6 +90,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -113,9 +105,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Control\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

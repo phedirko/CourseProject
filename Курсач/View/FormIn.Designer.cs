@@ -398,7 +398,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.ConfirmButton);
             this.Name = "FormIn";
-            this.Text = "FormIn";
+            this.Text = "Поступление";
             ((System.ComponentModel.ISupportInitialize)(this.ItemsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CountInputBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownInPrice)).EndInit();

@@ -86,5 +86,71 @@ namespace Курсач
             }
         }
 
+        //editing
+        private void ChgName_Click(object sender, EventArgs e)
+        {
+            string toChange = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            foreach (Item i in itc.items)
+            {
+                if (i.Name == toChange)
+                {
+                    i.Name = textBoxNewName.Text;
+                    break;
+                }
+
+            }
+            RefreshDataView(null, null);
+            NameOfItemChangeLable.Text = "(пусто)";
+            textBoxNewName.Text = "";
+        }
+
+        
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSelectToChange_Click(object sender, EventArgs e)
+        {
+            string toChange = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            NameOfItemChangeLable.Text = toChange;
+        }
+
+        private void buttonChangePrice_Click(object sender, EventArgs e)
+        {
+            string toChange = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+
+            foreach (Item i in itc.items)
+            {
+                if (i.Name == toChange)
+                {
+                    i.Price = (double) numericUpDownChangePrice.Value;
+                    break;
+                }
+
+            }
+            RefreshDataView(null, null);
+            NameOfItemChangeLable.Text = "(пусто)";
+            numericUpDownChangePrice.Value = 0;        
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string toChange = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+
+            foreach (Item i in itc.items)
+            {
+                if (i.Name == toChange)
+                {
+                    i.Count = (double)numericUpDownChangeCount.Value;
+                    break;
+                }
+
+            }
+            RefreshDataView(null, null);
+            NameOfItemChangeLable.Text = "(пусто)";
+            numericUpDownChangeCount.Value = 0;
+        }
     }
 }
